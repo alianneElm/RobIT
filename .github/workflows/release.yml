@@ -3,7 +3,7 @@ name: Release RobIT Artifact
 on:
   push:
     tags:
-      - 'v*'
+      - 'v*'  # Se ejecuta solo cuando haces push de un tag como v1.0.0
 
 jobs:
   build-and-release:
@@ -21,16 +21,16 @@ jobs:
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install pytest
+          pip install pytest pytest-cov
 
       - name: Run tests
         run: |
           pytest --cov --cov-branch
 
-      - name: Create release package
+      - name: Create artifact
         run: |
           mkdir robit_release
-          cp -r main.py models README.md pyproject.toml robit_release/
+          cp -r main.py models README.md pyproject.toml robit_release/ || true
           zip -r RobIT-${{ github.ref_name }}.zip robit_release
 
       - name: Upload release asset
