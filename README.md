@@ -23,14 +23,14 @@ If RobIT tries to walk off the edge of the world... well, it lets you know and r
 
 Make sure you have Python 3.10+ and a sense of adventure.
 
-python main.py
+```python main.py```
 
 ---
 
 ## How to test RobIT
 To make sure it behaves well:
 
-python -m unittest discover tests
+```python -m unittest discover tests```
 
 ---
 
