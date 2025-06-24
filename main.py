@@ -6,7 +6,7 @@ from utils.interface import (
     print_intro
 )
 
-if __name__ == "__main__":
+def main():
     print_intro()  
 
     # Grid setup
@@ -40,3 +40,5 @@ if __name__ == "__main__":
         print(robit.report())
         display_grid(width, height, robit_x=robit.x, robit_y=robit.y, robit_dir=robit.direction)
 
+if __name__ == "__main__":
+    main()
