@@ -1,4 +1,3 @@
-
 from models.direction import Direction
 
 def print_intro():
