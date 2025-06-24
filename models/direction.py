@@ -48,4 +48,3 @@ class Direction(Enum):
         (Useful for consistency or future flexibility)
         """
         return self.value
-
