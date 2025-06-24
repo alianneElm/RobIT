@@ -40,5 +40,5 @@ def main():
         print(robit.report())
         display_grid(width, height, robit_x=robit.x, robit_y=robit.y, robit_dir=robit.direction)
 
-if __name__ == "__main__":
+if __name__ == "__main__": # pragma: no cover
     main()
