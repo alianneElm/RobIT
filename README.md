@@ -4,8 +4,6 @@ Welcome to **RobIT** — your loyal, grid-loving robot who follows simple direct
 
 No batteries included. Just raw directional obedience.
 
----
-
 ## What is this?
 
 This is a command-line robot simulator, created as part of a technical coding challenge. RobIT lives in a grid-based room, starts at a given position, and follows a sequence of commands:
@@ -38,7 +36,6 @@ To run using unittest:
 
 ```python -m unittest discover tests```
 
----
 ## To lint and autofix your code:
 
 ```ruff check . --fix```
@@ -83,6 +80,7 @@ To run using unittest:
 ✅ Clear test separation by module
 
 ✅ Automated GitHub Releases for versioned deployment
+
 ---
 
 ## 🛠️ Developer Experience
@@ -97,6 +95,7 @@ Colored output for easier debugging
 Custom exceptions and edge case tests
 
 Ready for GitHub Pages + MkDocs
+
 ---
 
 ## Security
