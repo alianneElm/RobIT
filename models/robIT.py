@@ -1,4 +1,9 @@
 from models.direction import Direction
+import sys
+
+# ANSI color codes for terminal output
+RED = "\033[91m"
+RESET = "\033[0m"
 
 
 class RobIT:
@@ -56,7 +61,8 @@ class RobIT:
             self.x = new_x
             self.y = new_y
         else:
-            print(f"Warning: RobIT can't move outside the grid (attempted move to {new_x}, {new_y}).")
+            print(f"{RED}❌ Error: RobIT attempted to move outside the grid. Exiting program.{RESET}")
+            sys.exit(1)
 
     def _get_delta(self, direction: Direction):
         """

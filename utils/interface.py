@@ -1,20 +1,26 @@
 from models.direction import Direction
 
+# ANSI color codes for terminal output
+RED = "\033[91m"
+GREEN = "\033[92m"
+BLUE = "\033[94m"
+RESET = "\033[0m"
+
 def print_intro():
-    print("""
-        Welcome to the world of 🤖 RobIT!
+    print(f"""
+        {BLUE}Welcome to the world of 🤖 RobIT!{RESET}
         Guide your grid explorer through a custom-sized world.
         RobIT follows your commands faithfully — but stays within bounds!
         """)
 
-    print("""
-        Legend:
+    print(f"""
+        {GREEN}Legend:{RESET}
         🤖🔼 = RobIT facing North
         🤖▶️ = RobIT facing East
         🤖🔽 = RobIT facing South
         🤖◀️ = RobIT facing West
 
-        Use commands:
+        {GREEN}Use commands:{RESET}
         L - Turn Left
         R - Turn Right
         F - Move Forward
@@ -31,7 +37,7 @@ def get_valid_position(axis: str, limit: int) -> int:
             if 0 <= value < limit:
                 return value
             else:
-                print(f"{axis.upper()} must be between 0 and {limit - 1}.")
+                print(f"{RED}{axis.upper()} must be between 0 and {limit - 1}.{RESET}")
         except ValueError:
             print("Please enter a valid integer.")
 
@@ -44,7 +50,7 @@ def get_valid_direction() -> Direction:
         if letter in {'N', 'E', 'S', 'W'}:
             return Direction.from_letter(letter)
         else:
-            print("Invalid direction. Please enter one of: N, E, S, W.")
+            print(f"{RED}Invalid direction. Please enter one of: N, E, S, W.{RESET}")
 
 
 def get_direction_arrow(direction):
