@@ -69,5 +69,5 @@ def test_main_command_and_exit(capsys):
 
     captured = capsys.readouterr()
 
-    assert "📍 RobIT's current state:" in captured.out
-    assert "📍 Final report:" in captured.out    
+    assert "RobIT's current state:" in captured.out
+    assert "Report:" in captured.out    

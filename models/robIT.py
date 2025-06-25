@@ -1,9 +1,6 @@
 from models.direction import Direction
 import sys
-
-# ANSI color codes for terminal output
-RED = "\033[91m"
-RESET = "\033[0m"
+from utils.interface import RED, RESET
 
 
 class RobIT:
@@ -77,7 +74,7 @@ class RobIT:
         elif direction == Direction.W:
             return (-1, 0)
         else:
-            raise ValueError(f"Invalid direction: {direction}")
+            raise ValueError(f"{RED}Invalid direction: {direction}{RESET}")
 
     def report(self) -> str:
         """
@@ -99,4 +96,4 @@ class RobIT:
             elif command == 'B':
                 self.move_backward()
             else:
-                print(f"Invalid command: '{command}' — Ignored.")
+                print(f"{RED}Invalid command: '{command}' — Ignored.{RESET}")
