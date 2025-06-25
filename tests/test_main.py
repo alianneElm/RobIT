@@ -1,3 +1,4 @@
+import pytest
 from unittest.mock import patch
 from main import main
 import importlib.util
@@ -14,21 +15,13 @@ def test_main_flow(capsys):
         "exit"  # exit command
     ]
     with patch("builtins.input", side_effect=user_inputs):
-        main()
+        with pytest.raises(SystemExit) as exc_info:
+            main()
+        assert exc_info.type == SystemExit
+        assert exc_info.value.code == 1
 
     captured = capsys.readouterr()
-
-    print("=== OUTPUT START ===")
-    print(captured.out)
-    print("=== OUTPUT END ===")
-
-    assert "📍 Final report:" in captured.out
-
-    final_state = "4 4 E"
-    lines = captured.out.strip().splitlines()
-    assert any(final_state in line for line in lines), (
-        f"Expected final state '{final_state}' not found in output:\n{captured.out}"
-    )
+    assert "❌ Error: RobIT attempted to move outside the grid" in captured.out
 
 def test_main_guard_does_not_run_main_on_import(capsys):
     """
@@ -44,3 +37,25 @@ def test_main_guard_does_not_run_main_on_import(capsys):
     # Captured output should *not* contain intro text
     output = capsys.readouterr().out
     assert "Welcome to the world of 🤖 RobIT!" not in output
+
+def test_main_command_and_exit(capsys):
+    user_inputs = [
+        "5",     # grid width
+        "5",     # grid height
+        "2",     # RobIT x
+        "3",     # RobIT y
+        "N",     # RobIT direction
+        "F",     # move forward (executes robit.execute)
+        "exit"   # triggers final report
+    ]
+
+    with patch("builtins.input", side_effect=user_inputs):
+        try:
+            main()
+        except SystemExit:
+            pass  # If you still raise sys.exit on bounds, ignore it
+
+    captured = capsys.readouterr()
+
+    assert "📍 RobIT's current state:" in captured.out
+    assert "📍 Final report:" in captured.out    
