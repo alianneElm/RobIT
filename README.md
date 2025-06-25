@@ -100,12 +100,16 @@ Ready for GitHub Pages + MkDocs
 ---
 
 ## Security
+
 Please refer to SECURITY.md for information on responsible vulnerability disclosure.
+
 ---
 
 ## Documentation
-Documentation will soon be available at: https://alianneElm/.github.io/RobIT
+
+Documentation available at: https://alianneElm/.github.io/RobIT
 Generated with MkDocs and hosted via GitHub Pages.
+
 ---
 
 ## Design notes
@@ -120,6 +124,7 @@ Direction keeps RobIT oriented (geographically, not existentially)
 main.py is where it all comes together
 
 All written with modularity and testability in mind, like a good robot citizen.
+
 ---
 
 ## Final thoughts
