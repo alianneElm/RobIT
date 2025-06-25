@@ -1,23 +1,45 @@
-# Security Policy
+# 🔐 Security Policy
 
 ## Supported Versions
 
-This project is currently maintained in a single stable version:
+RobIT is a demo project maintained as part of a technical showcase. While not intended for production use, we still take security and responsible disclosure seriously.
 
 | Version | Supported |
-| ------- | --------- |
-| 1.x     | ✅        |
+|---------|-----------|
+| main    | ✅        |
+| releases prior to main | ❌ |
+
+---
 
 ## Reporting a Vulnerability
 
-If you discover a security vulnerability in RobIT, please **do not open a public issue**.
+If you discover a security vulnerability or any behavior that might pose a risk, please follow these steps:
 
-Instead, report it privately via email: **alianneelm@yahoo.se**
+1. **Do not open a public issue.**
+2. Instead, contact us **privately** via email: `alianneelm@yahoo.se`
+3. Include as many details as possible:
+   - Steps to reproduce
+   - Affected component (if known)
+   - Severity assessment
+   - Screenshots or logs if applicable
 
-We will investigate and respond as quickly as possible.  
-Responsible disclosure is appreciated!
+---
 
-## Notes
+## Security Best Practices
 
-- RobIT is a CLI-based educational project and does not process network data or sensitive information.
-- Still, we encourage safe coding and secure practices.
+Although RobIT is a CLI-only educational tool, it follows these practices:
+
+- No network access or external inputs
+- No file I/O or persistence by default
+- Code is fully test-covered and linted
+- All logic runs within sandboxed input prompts
+
+---
+
+## Disclosure Timeline
+
+We will publicly disclose and patch critical issues in the next tagged release once verified and resolved.
+
+Thank you for helping make open-source software better and safer!  
+— The RobIT Maintainers
+
