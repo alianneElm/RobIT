@@ -4,10 +4,14 @@
 
 RobIT is a demo project maintained as part of a technical showcase. While not intended for production use, we still take security and responsible disclosure seriously.
 
-| Version | Supported |
-|---------|-----------|
-| main    | ✅        |
-| releases prior to main | ❌ |
+| Version        | Supported | Notes                          |
+| -------------- | --------- | ------------------------------ |
+| `main`         | ✅         | Actively developed and patched |
+| `v1.3.0`       | ✅         | Latest stable release          |
+| Prior versions | ❌         | Deprecated / development-only  |
+
+⚠️ Security updates will only be applied to the main branch and the latest stable release (v1.3.0).
+Please update to the latest version to receive fixes and improvements.
 
 ---
 
