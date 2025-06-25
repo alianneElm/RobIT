@@ -41,5 +41,5 @@ Although RobIT is a CLI-only educational tool, it follows these practices:
 We will publicly disclose and patch critical issues in the next tagged release once verified and resolved.
 
 Thank you for helping make open-source software better and safer!  
-— The RobIT Maintainers
+— Alianne Elm
 
