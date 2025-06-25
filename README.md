@@ -1,6 +1,6 @@
 # 🤖 RobIT — The Robot That Does What It's Told (Mostly)
 
-Welcome to **RobIT** — your loyal, grid-loving robot who follows simple directions with unwavering determination. Built in Python with love (and a few coffee stains), RobIT is here to walk, turn, and report — all inside a nice rectangular world you define.
+Welcome to **RobIT** — your loyal, grid-loving robot who follows simple directions with unwavering determination. Built in Python, RobIT is here to walk, turn, and report — all inside a nice rectangular world you define.
 
 No batteries included. Just raw directional obedience.
 
@@ -23,15 +23,89 @@ If RobIT tries to walk off the edge of the world... well, it lets you know and r
 
 Make sure you have Python 3.10+ and a sense of adventure.
 
-```python main.py```
+```python3 main.py```
 
 ---
 
 ## How to test RobIT
 To make sure it behaves well:
 
+With coverage report:
+
+```pytest tests --cov=models --cov=main --cov-branch --cov-report=term-missing```
+
+To run using unittest:
+
 ```python -m unittest discover tests```
 
+---
+## To lint and autofix your code:
+
+```ruff check . --fix```
+
+---
+
+## ✅ Features implemented:
+✅ Custom grid size
+
+✅ Safe initial placement and direction
+
+✅ Turn left/right
+
+✅ Move forward and backward
+
+✅ Ignores invalid commands (with warning)
+
+✅ Detects and exits gracefully if going out of bounds
+
+✅ Directional emoji rendering
+
+✅ CLI reporting (position + direction)
+
+✅ Color-coded messages for UX
+
+✅ Full test suite with pytest and unittest
+
+✅ 100% test coverage on core logic
+
+✅ Continuous Integration (CI) with GitHub Actions
+
+✅ Test coverage report uploaded to Codecov
+
+✅ Linting with ruff
+
+✅ Styled console output with ANSI colors
+
+✅ Modular design: main, robIT, direction, interface
+
+✅ Robust error handling
+
+✅ Clear test separation by module
+
+✅ Automated GitHub Releases for versioned deployment
+---
+
+## 🛠️ Developer Experience
+CI/CD via GitHub Actions
+
+Coverage via Codecov (coverage.xml generated on push/PR)
+
+Static analysis & linting via Ruff
+
+Colored output for easier debugging
+
+Custom exceptions and edge case tests
+
+Ready for GitHub Pages + MkDocs
+---
+
+## Security
+Please refer to SECURITY.md for information on responsible vulnerability disclosure.
+---
+
+## Documentation
+Documentation will soon be available at: https://alianneElm/.github.io/RobIT
+Generated with MkDocs and hosted via GitHub Pages.
 ---
 
 ## Design notes
@@ -46,21 +120,10 @@ Direction keeps RobIT oriented (geographically, not existentially)
 main.py is where it all comes together
 
 All written with modularity and testability in mind, like a good robot citizen.
-
-## Why the name “RobIT”?
-Because:
-
-It’s a robot
-
-It’s an IT challenge
-
-And naming things is hard...
-
 ---
 
 ## Final thoughts
 "In a grid full of uncertainty, be like RobIT: take small steps, turn with intention, and never fall silently."
 
-Made with ❤️, clean code, and just the right amount of caffeine.  
-Committed proudly as: `git commit -m "feat: bring robot to life"`  
+Made with ❤️, clean code, and just the right amount of caffeine.   
 — Alianne Elm
