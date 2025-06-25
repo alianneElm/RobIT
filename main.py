@@ -5,6 +5,7 @@ from utils.interface import (
     display_grid,
     print_intro
 )
+from utils.interface import GREEN, BLUE, RESET
 
 def main():
     print_intro()  
@@ -12,7 +13,7 @@ def main():
     # Grid setup
     width = int(input("Enter grid width: "))
     height = int(input("Enter grid height: "))
-    print(f"Grid size set to {width}x{height}")
+    print(f"{GREEN}Grid size set to {width}x{height}{RESET}")
 
     # Show empty grid
     display_grid(width, height)
@@ -28,15 +29,15 @@ def main():
     display_grid(width, height, robit_x=x, robit_y=y, robit_dir=direction)
 
     while True:
-        commands = input("Enter commands (L, R, F, B) or type 'exit' to quit: ").strip().lower()
+        commands = input("\nEnter commands (L, R, F, B) or type 'exit' to quit: ").strip().lower()
         if commands in ["exit", "quit", "q"]:
-            print("\n📍 Final report:")
+            print(f"\n{BLUE}Report:{RESET}")
             print(robit.report())
             display_grid(width, height, robit_x=robit.x, robit_y=robit.y, robit_dir=robit.direction)
             break
 
         robit.execute(commands.upper())
-        print("\n📍 RobIT's current state:")
+        print(f"\n{GREEN}RobIT's current state:{RESET}")
         print(robit.report())
         display_grid(width, height, robit_x=robit.x, robit_y=robit.y, robit_dir=robit.direction)
 

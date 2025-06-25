@@ -39,7 +39,7 @@ def get_valid_position(axis: str, limit: int) -> int:
             else:
                 print(f"{RED}{axis.upper()} must be between 0 and {limit - 1}.{RESET}")
         except ValueError:
-            print("Please enter a valid integer.")
+            print(f"{RED}Please enter a valid integer.{RESET}")
 
 def get_valid_direction() -> Direction:
     """
@@ -69,7 +69,8 @@ def display_grid(width, height, robit_x=None, robit_y=None, robit_dir=None):
     Prints a grid of the given dimensions.
     RobIT is shown at (robit_x, robit_y) with an arrow indicating his direction.
     """
-    print("\n  Grid view:\n")
+    print(f"\n{BLUE}____________{RESET}")
+    print(f"\n{BLUE}Grid view:{RESET}\n")
     for y in reversed(range(height)):
         row = ""
         for x in range(width):
