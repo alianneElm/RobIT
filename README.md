@@ -106,7 +106,7 @@ Please refer to SECURITY.md for information on responsible vulnerability disclos
 
 ## Documentation
 
-Documentation available at: https://alianneElm/.github.io/RobIT
+Documentation available at: https://alianneelm/.github.io/RobIT
 Generated with MkDocs and hosted via GitHub Pages.
 
 ---
