@@ -1,4 +1,4 @@
-# 🤖 RobIT — The Robot That Does What It's Told (Mostly)
+# 🤖 RobIT — The Robot That Does What It's Told
 
 Welcome to **RobIT** — your loyal, grid-loving robot who follows simple directions with unwavering determination. Built in Python, RobIT is here to walk, turn, and report — all inside a nice rectangular world you define.
 
