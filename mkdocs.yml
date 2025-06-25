@@ -1,0 +1,18 @@
+site_name: RobIT
+site_description: "A grid-bound command-line robot built in Python"
+theme:
+  name: material
+  palette:
+    scheme: slate
+    primary: blue
+    accent: green
+nav:
+  - Home: index.md
+  - Getting Started: getting-started.md
+  - Usage: usage.md
+  - Testing: testing.md
+  - Architecture: architecture.md
+  - RobIT Logic: robit.md
+  - Security: security.md
+  - Changelog: changelog.md
+
