@@ -22,15 +22,19 @@ def test_move_backward_north(default_robit):
     default_robit.move_backward()
     assert (default_robit.x, default_robit.y) == (2, 1)
 
-def test_move_forward_out_of_bounds():
+def test_move_forward_out_of_bounds_exits():
     robit = RobIT(x=4, y=4, direction=Direction.N, grid_width=5, grid_height=5)
-    robit.move_forward()
-    assert (robit.x, robit.y) == (4, 4)
+    with pytest.raises(SystemExit) as e:
+        robit.move_forward()
+    assert e.type == SystemExit
+    assert e.value.code == 1
 
 def test_move_backward_out_of_bounds():
     robit = RobIT(x=0, y=0, direction=Direction.N, grid_width=5, grid_height=5)
-    robit.move_backward()
-    assert (robit.x, robit.y) == (0, 0)
+    with pytest.raises(SystemExit) as e:
+        robit.move_backward()
+    assert e.type == SystemExit
+    assert e.value.code == 1
 
 def test_execute_sequence():
     robit = RobIT(x=1, y=1, direction=Direction.N, grid_width=5, grid_height=5)
