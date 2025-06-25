@@ -2,6 +2,19 @@ import pytest
 from models.robIT import RobIT
 from models.direction import Direction
 
+"""
+Unit tests for the RobIT class, which manages movement and state of the robot.
+
+These tests cover:
+- Forward and backward movement
+- Grid boundary enforcement (exits on out-of-bounds)
+- Rotation handling (left and right)
+- Command execution and reporting
+
+This suite ensures that RobIT behaves correctly in all expected directions and
+handles grid constraints as specified by the assignment.
+"""
+
 @pytest.fixture
 def default_robit():
     return RobIT(x=2, y=2, direction=Direction.N, grid_width=5, grid_height=5)

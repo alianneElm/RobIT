@@ -2,6 +2,18 @@ import unittest
 from models.direction import Direction
 
 class TestDirection(unittest.TestCase):
+    """
+    Unit tests for the Direction enum in the RobIT project.
+
+    These tests verify:
+    - Correct behavior of directional turns (left and right)
+    - Mapping from string letters to Direction enum instances
+    - Handling of invalid direction letters
+    - Conversion of Direction instances to string and letter representations
+
+    This suite ensures the directional logic that guides RobIT's movement
+    is robust and behaves as expected across all edge cases.
+    """
 
     def test_left_turns(self):
         self.assertEqual(Direction.N.left(), Direction.W)

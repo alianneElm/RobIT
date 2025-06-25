@@ -4,6 +4,18 @@ from main import main
 import importlib.util
 import os
 
+"""
+Tests for the main entry point of the RobIT application.
+
+Verifies:
+- End-to-end flow from setup to command execution
+- Final state reporting
+- Program exit on out-of-bounds movement
+- Guard clause behavior to prevent auto-execution on import
+
+These integration-style tests ensure RobIT operates as expected when run interactively.
+"""
+
 def test_main_flow(capsys):
     user_inputs = [
         "5",    # grid width
@@ -53,7 +65,7 @@ def test_main_command_and_exit(capsys):
         try:
             main()
         except SystemExit:
-            pass  # If you still raise sys.exit on bounds, ignore it
+            pass
 
     captured = capsys.readouterr()
 

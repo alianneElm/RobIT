@@ -7,6 +7,18 @@ from utils.interface import (
     display_grid,
 )
 
+"""
+Tests for utility functions in interface.py that handle user input and grid display.
+
+Includes:
+- Validation of position input within grid bounds
+- Validation of initial direction input
+- Correct emoji arrow mapping for each direction
+- Display rendering of the grid with or without RobIT's position
+
+These tests ensure input logic is user-friendly and output is visually consistent.
+"""
+
 def test_get_direction_arrow():
     assert get_direction_arrow("N") == "🔼"
     assert get_direction_arrow("E") == "▶️"
