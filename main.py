@@ -3,17 +3,22 @@ from utils.interface import (
     get_valid_position,
     get_valid_direction,
     display_grid,
-    print_intro
+    print_intro,
+    get_valid_grid
 )
-from utils.interface import GREEN, BLUE, RESET
+from utils.interface import GREEN, BLUE, RED, RESET
 
 def main():
     print_intro()  
 
-    # Grid setup
-    width = int(input("Enter grid width: "))
-    height = int(input("Enter grid height: "))
-    print(f"{GREEN}Grid size set to {width}x{height}{RESET}")
+    # Grid setup with validation
+    try:
+        width = get_valid_grid("Enter grid width: ")
+        height = get_valid_grid("Enter grid height: ")
+        print(f"{GREEN}Grid size set to {width}x{height}{RESET}")
+    except ValueError as e:
+        print(f"{RED}{e}{RESET}")
+
 
     # Show empty grid
     display_grid(width, height)

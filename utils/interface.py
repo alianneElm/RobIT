@@ -64,6 +64,21 @@ def get_direction_arrow(direction):
         'W': '◀️'
     }.get(direction, '?')
 
+def get_valid_grid(prompt: str) -> int:
+    while True:
+        user_input = input(prompt)
+
+        if not user_input.isdigit():
+            print(f"{RED}Invalid input: must be a positive integer.{RESET}")
+            continue
+
+        value = int(user_input)
+
+        if value <= 0:
+            print(f"{RED}Value must be greater than zero.{RESET}")
+        else:
+            return value
+
 def display_grid(width, height, robit_x=None, robit_y=None, robit_dir=None):
     """
     Prints a grid of the given dimensions.
