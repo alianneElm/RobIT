@@ -6,19 +6,15 @@ from utils.interface import (
     print_intro,
     get_valid_grid
 )
-from utils.interface import GREEN, BLUE, RED, RESET
+from utils.interface import GREEN, BLUE, RESET
 
 def main():
     print_intro()  
 
-    # Grid setup with validation
-    try:
-        width = get_valid_grid("Enter grid width: ")
-        height = get_valid_grid("Enter grid height: ")
-        print(f"{GREEN}Grid size set to {width}x{height}{RESET}")
-    except ValueError as e:
-        print(f"{RED}{e}{RESET}")
-
+    # Grid setup with internal validation (no try/except needed)
+    width = get_valid_grid("Enter grid width: ")
+    height = get_valid_grid("Enter grid height: ")
+    print(f"{GREEN}Grid size set to {width}x{height}{RESET}")
 
     # Show empty grid
     display_grid(width, height)
