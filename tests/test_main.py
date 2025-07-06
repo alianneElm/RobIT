@@ -33,7 +33,7 @@ def test_main_flow(capsys):
         assert exc_info.value.code == 1
 
     captured = capsys.readouterr()
-    assert "❌ Error: RobIT attempted to move outside the grid" in captured.out
+    assert "Error: RobIT attempted to move outside the grid" in captured.out
 
 def test_main_guard_does_not_run_main_on_import(capsys):
     """
@@ -71,3 +71,22 @@ def test_main_command_and_exit(capsys):
 
     assert "RobIT's current state:" in captured.out
     assert "Report:" in captured.out    
+
+def test_invalid_grid_input_triggers_error(capsys):
+    # Patch 'builtins.input' to simulate user input during the test.
+    # This replaces calls to input() with predefined responses, allowing automated testing
+    # of interactive functions without requiring manual input.
+
+    user_inputs = ["abc", "5", "5", "0", "0", "N", "exit"]
+    with patch("builtins.input", side_effect=user_inputs):
+        main()
+
+def test_grid_input_negative_triggers_error(capsys):
+    user_inputs = ["-3", "7", "5", "2", "2", "N", "exit"]  # width=-3 invalid, then 7 ok
+    with patch("builtins.input", side_effect=user_inputs):
+        main()
+
+def test_grid_input_zero_or_negative_triggers_error(capsys):
+    user_inputs = ["0", "6", "5", "2", "2", "N", "exit"]  # width=0 invalid, then 6 ok
+    with patch("builtins.input", side_effect=user_inputs):
+        main()

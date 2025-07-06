@@ -61,3 +61,18 @@ def test_display_grid(capsys):
     captured = capsys.readouterr()
     assert "🤖▶️" in captured.out
     assert "[   ][🤖▶️][   ]" in captured.out
+    
+def test_get_valid_grid_valid(monkeypatch):
+    monkeypatch.setattr("builtins.input", lambda _: "12")
+    from utils.interface import get_valid_grid
+    assert get_valid_grid("Enter grid width: ") == 12
+
+def test_get_valid_grid_invalid_then_valid(monkeypatch, capsys):
+    inputs = iter(["abc", "-5", "0", "7"])
+    monkeypatch.setattr("builtins.input", lambda _: next(inputs))
+    from utils.interface import get_valid_grid
+    result = get_valid_grid("Enter grid height: ")
+    captured = capsys.readouterr()
+    assert result == 7
+    assert "Invalid input" in captured.out
+    assert "must be greater than zero" in captured.out
