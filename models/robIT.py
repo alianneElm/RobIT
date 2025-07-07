@@ -1,6 +1,7 @@
 from models.direction import Direction
 import sys
-from utils.interface import RED, RESET
+from utils.interface import RED, GREEN, RESET
+from math import factorial
 
 
 class RobIT:
@@ -58,8 +59,22 @@ class RobIT:
             self.x = new_x
             self.y = new_y
         else:
-            print(f"{RED}❌ Error: RobIT attempted to move outside the grid. Exiting program.{RESET}")
+            print(f"{RED}Error: RobIT attempted to move outside the grid. Exiting program.{RESET}")
             sys.exit(1)
+
+    def move_turbo(self, n: int = 3):
+        """
+        Activates turbo mode if grid is at least 10x10.
+        Moves forward factorial(n) steps.
+        """
+        if self.grid_width < 10 or self.grid_height < 10:
+            print(f"{RED}Turbo unavailable: Grid must be at least 10x10.{RESET}")
+            return
+
+        steps = factorial(n)
+        print(f"{GREEN}Turbo mode activated! Moving forward {steps} steps.{RESET}")
+        for _ in range(steps):
+            self.move_forward()
 
     def _get_delta(self, direction: Direction):
         """
@@ -95,5 +110,7 @@ class RobIT:
                 self.move_forward()
             elif command == 'B':
                 self.move_backward()
+            elif command == 'T':
+                self.move_turbo()    
             else:
                 print(f"{RED}Invalid command: '{command}' — Ignored.{RESET}")

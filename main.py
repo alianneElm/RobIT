@@ -30,7 +30,7 @@ def main():
     display_grid(width, height, robit_x=x, robit_y=y, robit_dir=direction)
 
     while True:
-        commands = input("\nEnter commands (L, R, F, B) or type 'exit' to quit: ").strip().lower()
+        commands = input("\nEnter commands (L, R, F, B, T) or type 'exit' to quit: ").strip().lower()
         if commands in ["exit", "quit", "q"]:
             print(f"\n{BLUE}Report:{RESET}")
             print(robit.report())
