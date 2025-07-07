@@ -78,3 +78,21 @@ def test_robit_moves_backward():
     robit.execute("B")
     assert robit.x == 2 and robit.y == 1  # moving backward from N should go south
 
+def test_turbo_unavailable_for_small_grid(capsys):
+    robit = RobIT(x=0, y=0, direction=Direction.N, grid_width=9, grid_height=9)
+    robit.move_turbo()
+    captured = capsys.readouterr()
+    assert "Turbo unavailable" in captured.out
+    assert (robit.x, robit.y) == (0, 0)
+
+def test_turbo_moves_correct_steps_on_large_grid():
+    robit = RobIT(x=0, y=0, direction=Direction.E, grid_width=20, grid_height=20)
+    robit.move_turbo(n=3)  # factorial(3) = 6 steps east
+    assert (robit.x, robit.y) == (6, 0)
+
+def test_turbo_respects_boundaries():
+    robit = RobIT(x=18, y=0, direction=Direction.E, grid_width=20, grid_height=20)
+    with pytest.raises(SystemExit) as e:
+        robit.move_turbo(n=3)  # factorial(3) = 6 → out of bounds
+    assert e.type == SystemExit
+    assert e.value.code == 1

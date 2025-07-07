@@ -25,6 +25,7 @@ def print_intro():
         R - Turn Right
         F - Move Forward
         B - Move Backward
+        T - Turbo Forward (3!)
         """)       
 
 def get_valid_position(axis: str, limit: int) -> int:
