@@ -12,6 +12,7 @@ This is a command-line robot simulator, created as part of a technical coding ch
 - `R`: Turn right
 - `F`: Move forward
 - `B`: (Bonus) Move backward like a ninja in reverse
+- `T`: (Bonus) Turbo forward with factorial logic (3!)
 
 If RobIT tries to walk off the edge of the world... well, it lets you know and refuses to die silently.
 
