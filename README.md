@@ -41,48 +41,6 @@ To run using unittest:
 
 ```ruff check . --fix```
 
----
-
-## ✅ Features implemented:
-✅ Custom grid size
-
-✅ Safe initial placement and direction
-
-✅ Turn left/right
-
-✅ Move forward and backward
-
-✅ Ignores invalid commands (with warning)
-
-✅ Detects and exits gracefully if going out of bounds
-
-✅ Directional emoji rendering
-
-✅ CLI reporting (position + direction)
-
-✅ Color-coded messages for UX
-
-✅ Full test suite with pytest and unittest
-
-✅ 100% test coverage on core logic
-
-✅ Continuous Integration (CI) with GitHub Actions
-
-✅ Test coverage report uploaded to Codecov
-
-✅ Linting with ruff
-
-✅ Styled console output with ANSI colors
-
-✅ Modular design: main, robIT, direction, interface
-
-✅ Robust error handling
-
-✅ Clear test separation by module
-
-✅ Automated GitHub Releases for versioned deployment
-
----
 
 ## 🛠️ Developer Experience
 CI/CD via GitHub Actions
@@ -126,9 +84,5 @@ main.py is where it all comes together
 All written with modularity and testability in mind, like a good robot citizen.
 
 ---
-
-## Final thoughts
-"In a grid full of uncertainty, be like RobIT: take small steps, turn with intention, and never fall silently."
-
-Made with ❤️, clean code, and just the right amount of caffeine.   
+ 
 — Alianne Elm
